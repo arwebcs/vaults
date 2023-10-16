@@ -1,0 +1,35 @@
+{
+    "name": "arwebcs/vaults",
+    "description": "This is a function libraries.",
+    "type": "library",
+    "require": {
+        "php": ">=5.6"
+    },
+    "require-dev": {
+        "php": ">=5.6"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Arwebcs\\Vaults\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Soumyanjan Dey",
+            "email": "arwebcs@gmail.com"
+        }
+    ],
+    "keywords": [
+        "functions",
+        "vaults",
+        "libraries"
+    ],
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/arwebcs/vaults"
+        }
+    ],
+    "minimum-stability": "dev"
+}
