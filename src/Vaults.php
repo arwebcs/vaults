@@ -1,6 +1,6 @@
 <?php
 
-namespace Arwebcs\Vaults;
+namespace Devker\Vaults;
 
 class Vaults
 {

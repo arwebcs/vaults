@@ -1,5 +1,5 @@
 {
-    "name": "arwebcs/vaults",
+    "name": "devker/vaults",
     "description": "This is a function libraries.",
     "type": "library",
     "require": {
@@ -11,7 +11,7 @@
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "Arwebcs\\Vaults\\": "src/"
+            "Devker\\Vaults\\": "src/"
         }
     },
     "authors": [
