@@ -195,7 +195,6 @@ class Vaults
 
     public static function fileUpload($pathDirectory, $fileTmpName, $extension, $fileName)
     {
-        $fileName = md5($fileName);
         if (!is_dir($pathDirectory)) {
             mkdir($pathDirectory, 0777);
         }
