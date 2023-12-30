@@ -193,12 +193,19 @@ class Vaults
         return $size;
     }
 
-    public static function fileUpload($pathDirectory, $fileTmpName, $extension)
+    public static function fileUpload($pathDirectory, $fileTmpName, $extension, $fileName)
     {
+        $fileName = md5($fileName);
         if (!is_dir($pathDirectory)) {
             mkdir($pathDirectory, 0777);
         }
-        $fileMoved = move_uploaded_file($fileTmpName, $pathDirectory . md5(date("YmdHis")) . "." . $extension);
-        return $fileMoved;
+        $fileMoved = move_uploaded_file($fileTmpName, $pathDirectory . $fileName . "." . $extension);
+
+        if($fileMoved){
+             return $fileName;
+        }else{
+            return false;
+        }
+       
     }
 }
