@@ -1,5 +1,9 @@
 # Releases
 
+**Version 1.0.2** - 30.03.2024
+
+ - callAPI function bug fixed
+  
 **Version 1.0.1** - 30.12.2023
 
 - Bug fixed.
