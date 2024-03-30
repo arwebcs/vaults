@@ -39,12 +39,12 @@ class Vaults
         echo $redirectScript;
     }
 
-    public static function callAPI($apiMethod = "GET", $apiUrl = "", $data = [], $headers = null)
+    public static function callAPI($apiMethod = "GET", $apiUrl = "", $data = null, $files = true, $headers = null)
     {
         $curl = curl_init();
         curl_setopt($curl, CURLOPT_URL, $apiUrl);
         if ($headers == null) {
-            curl_setopt($curl, CURLOPT_HTTPHEADER, false);
+            curl_setopt($curl, CURLOPT_HTTPHEADER, []);
         } else {
             curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
         }
@@ -60,12 +60,16 @@ class Vaults
             case "POST":
                 curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "POST");
                 curl_setopt($curl, CURLOPT_POST, true);
-                curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
+                if ($files == true) {
+                    curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
+                } else {
+                    curl_setopt($curl, CURLOPT_POSTFIELDS, json_encode($data));
+                }
                 break;
             case "PUT":
                 curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "PUT");
                 curl_setopt($curl, CURLOPT_POST, true);
-                curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
+                curl_setopt($curl, CURLOPT_POSTFIELDS, json_encode($data));
                 break;
             case "DELETE":
                 curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "DELETE");
